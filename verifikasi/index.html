@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- Primary Meta Tags -->
+	<title>Verifikasi Kepemilikan Bidang Tanah</title>
+	<meta name="title" content="Verifikasi Kepemilikan Bidang Tanah">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		html, body {
+			/* height: 100%; */
+			width: 100%;
+			margin: auto;
+	    background-color: #ece6f2;
+	    /* color: white; */
+			/* overflow-y: hidden;
+			position: fixed; */
+	    font-size: max(2vw, 16px)
+		}
+        
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+		}
+
+		/* Firefox */
+		input[type=number] {
+		-moz-appearance: textfield;
+		}
+	</style>
+	
+</head>
+<body>
+    <div class="div" style="margin: auto;text-align: center;width: 80%;">    
+        <h2 style="font-size: max(4vw, 30px)"><b>Verifikasi kepemilikan bidang tanah</b></h2>
+        
+        <label for="fname">NIK pemilik:</label><br>
+        <input type="number" id="nik" name="nik" style="width:40%;height:max(2vw, 24px)"><br><br>
+        <button onclick="klikInput()">Submit</button>
+        
+        <p>Masukan nomor NIK pemilik bidang tanah untuk memverifikasi kepemilikan.</p>
+    </div>
+<script>
+    dataNIK = {
+        '3603132208930002' : { "id": "1-TGoF00jAAHNgVoMMlr9p4FE0fWneQk_", "url" : "https://drive.google.com/file/d/1-TGoF00jAAHNgVoMMlr9p4FE0fWneQk_/view"},
+        '3603140103570002' : { "id": "1bJPcE5jHiqv9haLKNk0Z2P4qae2dm4hn", "url" : "https://drive.google.com/file/d/1bJPcE5jHiqv9haLKNk0Z2P4qae2dm4hn/view"},
+        '612' : { "id": "19AtK_S3-oOD4j9h9nIEvfDIipq0a9sJa", "url" : "https://drive.google.com/file/d/19AtK_S3-oOD4j9h9nIEvfDIipq0a9sJa/view"},
+        '3603140204770003' : { "id": "1ADN9sEFHVQyyTc6Vb_QI02-ToEaWS0SN", "url" : "https://drive.google.com/file/d/1ADN9sEFHVQyyTc6Vb_QI02-ToEaWS0SN/view"},
+        '3603144402580002' : { "id": "1DmqDMvhiQYrNVMUcwu2gI8nmSn92k4cf", "url" : "https://drive.google.com/file/d/1DmqDMvhiQYrNVMUcwu2gI8nmSn92k4cf/view"},
+        '3603141103620001' : { "id": "1D__h_0zDj0BCPdoX7bMA4kX9IQ8kzPkp", "url" : "https://drive.google.com/file/d/1D__h_0zDj0BCPdoX7bMA4kX9IQ8kzPkp/view"},
+        '678' : { "id": "1yy6zG1t2gnaD0Y9YBvmhfwTu6vpsNfUo", "url" : "https://drive.google.com/file/d/1yy6zG1t2gnaD0Y9YBvmhfwTu6vpsNfUo/view"},
+        '3603141806860005' : { "id": "1itgNjFPmrFieYnQ8i0_OLhVt2bLiwPbD", "url" : "https://drive.google.com/file/d/1itgNjFPmrFieYnQ8i0_OLhVt2bLiwPbD/view"},
+        '3603131605570001' : { "id": "1nc4h89UrI6-GNTzuQ5f1X4ptXNJCOeSS", "url" : "https://drive.google.com/file/d/1nc4h89UrI6-GNTzuQ5f1X4ptXNJCOeSS/view"},
+        '3603131001830003' : { "id": "1EIqG_6UMkji_QniXfOvfVAt4zAEB0gJm", "url" : "https://drive.google.com/file/d/1EIqG_6UMkji_QniXfOvfVAt4zAEB0gJm/view"},
+        '3603141301620004' : { "id": "1QXqZ1qDNPApZK6jP4e3ACRdb9vDOUJ8P", "url" : "https://drive.google.com/file/d/1QXqZ1qDNPApZK6jP4e3ACRdb9vDOUJ8P/view"},
+        '3603141902890004' : { "id": "1DSYJ3FWJXXoNRTD8QQ5RXEUJJAULZux9", "url" : "https://drive.google.com/file/d/1DSYJ3FWJXXoNRTD8QQ5RXEUJJAULZux9/view"},
+        '084' : { "id": "1Z2pmT1JX6cfildu2Vbg76Itaut7oIfR5", "url" : "https://drive.google.com/file/d/1Z2pmT1JX6cfildu2Vbg76Itaut7oIfR5/view"},
+        '3603135009830004' : { "id": "1d8FK6oaLljoVWY1P_JYb1O-LJddDbeVg", "url" : "https://drive.google.com/file/d/1d8FK6oaLljoVWY1P_JYb1O-LJddDbeVg/view"},
+        '3603141702750003' : { "id": "1jOSlbIiNzuneYY0ThIiSYV_7kanAlTg6", "url" : "https://drive.google.com/file/d/1jOSlbIiNzuneYY0ThIiSYV_7kanAlTg6/view"},
+    }
+    // irham24.github.io/verifikasi/?p=1-TGoF00jAAHNgVoMMlr9p4FE0fWneQk_ # smkn10
+    // irham24.github.io/verifikasi/?p=1bJPcE5jHiqv9haLKNk0Z2P4qae2dm4hn # tabrani
+    // irham24.github.io/verifikasi/?p=19AtK_S3-oOD4j9h9nIEvfDIipq0a9sJa # kantor desa
+    // irham24.github.io/verifikasi/?p=1ADN9sEFHVQyyTc6Vb_QI02-ToEaWS0SN # sodikin2
+    // irham24.github.io/verifikasi/?p=1DmqDMvhiQYrNVMUcwu2gI8nmSn92k4cf # mardiah2
+    // irham24.github.io/verifikasi/?p=1D__h_0zDj0BCPdoX7bMA4kX9IQ8kzPkp # Tapi
+    // irham24.github.io/verifikasi/?p=1yy6zG1t2gnaD0Y9YBvmhfwTu6vpsNfUo # rudianto
+    // irham24.github.io/verifikasi/?p=1itgNjFPmrFieYnQ8i0_OLhVt2bLiwPbD # Holisor
+    // irham24.github.io/verifikasi/?p=1nc4h89UrI6-GNTzuQ5f1X4ptXNJCOeSS # Mustopa
+    // irham24.github.io/verifikasi/?p=1EIqG_6UMkji_QniXfOvfVAt4zAEB0gJm # Rudianto2
+    // irham24.github.io/verifikasi/?p=1QXqZ1qDNPApZK6jP4e3ACRdb9vDOUJ8P # Dadang
+    // irham24.github.io/verifikasi/?p=1DSYJ3FWJXXoNRTD8QQ5RXEUJJAULZux9 # Aryanto
+    // irham24.github.io/verifikasi/?p=1Z2pmT1JX6cfildu2Vbg76Itaut7oIfR5 # Rusdia
+    // irham24.github.io/verifikasi/?p=1d8FK6oaLljoVWY1P_JYb1O-LJddDbeVg # Rusmawati
+    // irham24.github.io/verifikasi/?p=1jOSlbIiNzuneYY0ThIiSYV_7kanAlTg6 # Gojali
+    function klikInput() {
+        params={}
+        i=0
+        // console.log("Start");
+        nik = document.getElementById("nik").value
+        // console.log(nik)
+        if (nik.length == 0) {
+            return alert("Masukan nomor NIK terlebih dahulu.");
+        }
+        data = GetURLParameter('p');
+        console.log(data);
+        dataThisNIK = dataNIK[nik.toString()]
+        // console.log(dataThisNIK["id"]);
+        if (data != null && dataThisNIK != null &&dataThisNIK["id"] != null && data == dataThisNIK["id"]) {
+            location.replace(dataNIK[nik]["url"])
+        } else {
+            alert("NIK yang kamu masukan salah.");
+        }
+        // console.log(GetURLParameter('p'));
+    }
+    function GetURLParameter(sParam){
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) 
+        {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+    }
+</script>
+</body>
+</html>
